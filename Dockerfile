@@ -1,7 +1,7 @@
 FROM python:2.7-alpine
 MAINTAINER Sergio Gordillo sergio.gordillo@vizzuality.com
 
-ENV NAME ms-python
+ENV NAME BR_Test
 ENV USER microservice
 
 RUN apk update && apk upgrade && \
