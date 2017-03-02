@@ -13,6 +13,15 @@ from ms.utils.http import request_to_microservice
 
 @endpoints.route('/hello', methods=['GET'])
 def say_hello():
-    """Query GEE Dataset Endpoint"""
-    logging.info('Doing GEE Query')
-    return jsonify({'data': 'hello'}), 200
+    """making dummy microservices"""
+    logging.info('making dummy microservice')
+
+    url = 'http://production-api.globalforestwatch.org/geostore/admin/'
+
+    iso = request.args.get('iso')
+
+    test = url + iso
+    r = requests.get(url=test)
+    data = r.json()
+
+    return jsonify({'data': data}), 200
